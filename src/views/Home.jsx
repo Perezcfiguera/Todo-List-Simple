@@ -1,10 +1,12 @@
 // This is you home view, which is being render on main.jsx
 import reactLogo from "../assets/reactLogo.png"
+import { Navbar } from "../components/Navbar";
 
 const Home = () => {
 
   return (
     <>
+    <Navbar/>
      <div className="container-fluid text-center vh-100 d-flex align-items-center">
       <div className="row">
         <div className="col">
