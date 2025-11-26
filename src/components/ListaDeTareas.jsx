@@ -4,11 +4,17 @@ export const Tareas = () => {
   const [tareas, setTareas] = useState(["comprar leche"]);
   const [nuevaTarea, setNuevaTarea] = useState("");
 
+   const eliminarTarea = (index) => {
+    const copia = [...tareas];
+    copia.splice(index, 1);
+    setTareas(copia);
+  };
+
   return (
     <>
     <div class="input-group flex-nowrap">
       <span class="input-group-text" id="addon-wrapping">
-        @
+
       </span>
 
       <input
@@ -45,11 +51,19 @@ export const Tareas = () => {
       </button>
 
     </div>
+
+
     
       <ul>
         {tareas.map((tareas, index) => (
-          <li key={index}>{tareas}</li>
+          <li 
+          key={index}>{tareas}
+          <button onClick={() => eliminarTarea(index)}>eliminar</button>
+          
+          </li>
         ))}
+       
+      
       </ul>
       </>
   );
